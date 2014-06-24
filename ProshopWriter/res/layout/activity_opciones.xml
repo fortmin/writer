@@ -1,0 +1,52 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:screenOrientation="portrait"
+    android:background="#000000"
+    tools:context="com.fortmin.nfc.Opciones"
+    tools:ignore="MergeRootFrame" >
+
+    <Button
+        android:id="@+id/grabarEmail"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:drawableLeft="@drawable/email"
+         android:layout_marginTop="10dp"
+        android:textSize="28sp"
+        android:text="@string/grabarEmail" />
+
+    <Button
+        android:id="@+id/grabarUrl"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/grabarEmail"
+        android:layout_marginTop="10dp"
+        android:drawableLeft="@drawable/navegador"
+        android:textSize="28sp" 
+        android:text="@string/grabarUrl" />
+
+    <Button
+        android:id="@+id/grabarTelefono"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+         android:layout_below="@+id/grabarUrl"
+         android:layout_marginTop="10dp"
+         android:drawableLeft="@drawable/telefono"
+         android:textSize="28sp"
+         android:text="@string/grabarTelefono"
+         />
+
+    <Button
+        android:id="@+id/grabarSms"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/grabarTelefono"
+        android:layout_marginTop="10dp"
+        android:drawableLeft="@drawable/sms"
+        android:textSize="28sp"
+        android:text="@string/grabarSms" />
+    
+</RelativeLayout>
+

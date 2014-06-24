@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">ProshopWriter</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="botonEscritura">GrabarTag</string>
+    <string name="url">Escriba la Url a grabar </string>
+    <string name="botonSalir">Salir</string>
+    <string name="title_activity_opciones">Opciones</string>
+    <string name="grabarEmail">Grabar-Email</string>
+    <string name="grabarUrl">Grabar-Url</string>
+    <string name="grabarTelefono">Grabar-Telefono</string>
+    <string name="grabarSms">Grabar-Sms</string>
+    <string name="title_activity_grabar_url">GrabarUrl</string>
+    <string name="title_activity_grabar_email">GrabarEmail</string>
+    <string name="title_activity_grabar_telefono">GrabarTelefono</string>
+
+</resources>

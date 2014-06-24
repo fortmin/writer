@@ -1,0 +1,32 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:screenOrientation="portrait"
+    android:background="#000000"
+    tools:context="com.fortmin.nfc.GrabarTelefono"
+    tools:ignore="MergeRootFrame" >
+     <EditText
+        android:id="@+id/ingresoTelefono"
+        android:inputType="phone"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_marginTop="10dp"
+        android:textSize="21sp"
+        android:textColor="#FFFFFF">
+        <requestFocus />
+    </EditText>
+
+    <Button
+        android:id="@+id/btnGrabarTelefono"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ingresoTelefono"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="14dp"
+        android:text="@string/botonEscritura" />
+    
+</RelativeLayout>
+
