@@ -62,6 +62,13 @@ public class Opciones extends Activity {
 				grabarTelefono();
 			}
 		});
+		btn_grabar_sms.setOnClickListener(new View.OnClickListener() {
+			public void onClick(View view) {
+				// textoUrl = editUrl.getText().toString();
+				// Mensaje(view, "Toque el Tag NFC Tag para grabar \n");
+				grabarSms();
+			}
+		});
 
 	}
 
@@ -98,6 +105,10 @@ public class Opciones extends Activity {
 	private void grabarTelefono() {
 		Intent grabar_telefono = new Intent(this, GrabarTelefono.class);
 		startActivity(grabar_telefono);
+	}
+	private void grabarSms() {
+		Intent grabar_sms = new Intent(this, GrabarSms.class);
+		startActivity(grabar_sms);
 	}
 
 }

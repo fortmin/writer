@@ -15,5 +15,6 @@
     <string name="title_activity_grabar_url">GrabarUrl</string>
     <string name="title_activity_grabar_email">GrabarEmail</string>
     <string name="title_activity_grabar_telefono">GrabarTelefono</string>
+    <string name="title_activity_grabar_sms">GrabarSms</string>
 
 </resources>
