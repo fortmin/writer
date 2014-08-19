@@ -1,0 +1,52 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    android:background="#FB9836"
+    tools:context="com.fortmin.nfc.Inicio"
+    tools:ignore="MergeRootFrame" >
+    <FrameLayout 
+        android:id="@+id/titulo"
+        android:layout_width="match_parent"
+        android:layout_height="120dp" 
+        android:background="@drawable/shopping">
+        
+     </FrameLayout>
+     <TableLayout
+        android:id="@+id/tableLayout1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/titulo"
+        android:layout_centerHorizontal="true" >
+        <TableRow
+            android:id="@+id/tableRow1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+          <ImageButton
+            android:id="@+id/botonWrite"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#FB9836"
+            android:layout_marginTop="30dp"
+            android:clickable="true"
+            android:src="@drawable/btn_grabartag" />
+          </TableRow>
+          <TableRow
+            android:id="@+id/tableRow2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+            <ImageButton
+              android:id="@+id/botonIbeacon"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:background="#FB9836"
+              android:layout_marginTop="30dp"
+              android:clickable="true"
+              android:src="@drawable/btn_ibeacon" />
+           </TableRow>
+          
+           </TableLayout>
+    </RelativeLayout>
+
