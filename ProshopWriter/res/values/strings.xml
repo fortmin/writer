@@ -9,12 +9,26 @@
     <string name="botonSalir">Salir</string>
     <string name="title_activity_opciones">Opciones</string>
     <string name="grabarEmail">Grabar-Email</string>
+    <string name="btnGrabarTexto">Grabar-Texto</string>
     <string name="grabarUrl">Grabar-Url</string>
     <string name="grabarTelefono">Grabar-Telefono</string>
     <string name="grabarSms">Grabar-Sms</string>
+    <string name="edit_text_telefono">Digite el numero de teléfono</string>
+    <string name="edit_text_texto_propietario">Digite el texto a Grabar</string>
+    <string name="edit_text_grabar_cuerpo_sms">Digite el cuerpo del mensaje</string>
+    <string name="edit_text_grabar_email">Digite la dirección de correo</string>
+    <string name="edit_text_grabar_subject">Digite el subject</string>
+    <string name="edit_text_grabar_contenido">Digite el contenido del mensaje</string>
+    <string name="grabarTexto">Grabar-Texto</string>
     <string name="title_activity_grabar_url">GrabarUrl</string>
     <string name="title_activity_grabar_email">GrabarEmail</string>
     <string name="title_activity_grabar_telefono">GrabarTelefono</string>
     <string name="title_activity_grabar_sms">GrabarSms</string>
+    <string name="botonIbeacon">Ibeacon</string>
+    <string name="title_activity_ble">Ble</string>
+    <string name="mensajeCalibracion">Para calibrar separese del Ibeacon, hasta el lugar desde donde quiere ser detectado, luego puelse calibrar</string>
+    <string name="calibrarIbeacon">Calibrar</string>
+    <string name="testIbeacon">TestearBeacon</string>
+    <string name="title_activity_grabar_ndef_propietario">GrabarNdefPropietario</string>
 
 </resources>

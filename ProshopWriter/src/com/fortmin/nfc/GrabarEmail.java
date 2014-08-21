@@ -1,25 +1,25 @@
 package com.fortmin.nfc;
 
-import com.fortmin.proshopapi.ProShopMgr;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
-import android.graphics.Typeface;
 import android.nfc.NdefMessage;
 import android.nfc.Tag;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.Toast;
+
+import com.fortmin.proshopapi.ProShopMgr;
 
 public class GrabarEmail extends Activity {
 
 	// DECLARACION DE VARIABLES
 	private String email, mensaje, subject;
-	private Button btn_grabar_email;
+	private ImageButton btn_grabar_email;
 	private EditText ingreso_email, ingreso_subject, ingreso_mensaje;
 	ProShopMgr proshopmgr;
 	private Context context;
@@ -29,16 +29,11 @@ public class GrabarEmail extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_grabar_email);
-		btn_grabar_email = (Button) findViewById(R.id.btnGrabarEmail);
+		btn_grabar_email = (ImageButton) findViewById(R.id.btnGrabarEmail);
 		ingreso_email = (EditText) findViewById(R.id.ingresoEmail);
 		ingreso_subject = (EditText) findViewById(R.id.ingresoSubject);
 		ingreso_mensaje = (EditText) findViewById(R.id.ingresoMensaje);
-		// cambio la fuente del botón
-		Typeface fuente = Typeface.createFromAsset(getAssets(),"gloriahallelujah.ttf");
-		// agrego la fuente al botón
-		btn_grabar_email.setTypeface(fuente);
-		// Le pongo degrade plateado al botón
-		btn_grabar_email.setBackgroundResource(R.drawable.degradado);
+
 		btn_grabar_email.setOnClickListener(new View.OnClickListener()
 
 		{

@@ -4,40 +4,50 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:screenOrientation="portrait"
-    android:background="#000000"
+    android:background="#FB9836"
     tools:context="com.fortmin.nfc.GrabarSms"
     tools:ignore="MergeRootFrame" >
+     <FrameLayout 
+        android:id="@+id/titulo6"
+        android:layout_width="match_parent"
+        android:layout_height="120dp" 
+        android:background="@drawable/shopping">
+     </FrameLayout>
      <EditText
         android:id="@+id/ingresoSMS"
-        android:hint="Ingrese Número Teléfono"
+        android:hint="@string/edit_text_telefono"
         android:inputType="phone"
+        android:layout_below="@+id/titulo6"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
+        android:background="#FB9836"
         android:layout_marginTop="10dp"
         android:textSize="21sp"
-        android:textColor="#FFFFFF">
+        android:textColor="#FFFF00">
         <requestFocus />
     </EditText>
      <EditText
         android:id="@+id/ingresoBody"
         android:inputType="text"
-        android:hint="Ingrese el cuerpo del mensaje"
+        android:hint="@string/edit_text_grabar_cuerpo_sms"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
+        android:background="#FB9836"
         android:layout_below="@+id/ingresoSMS"
         android:layout_marginTop="10dp"
         android:textSize="21sp"
-        android:textColor="#FFFFFF">
+        android:textColor="#FFFF00">
        
     </EditText>
-    <Button
+    <ImageButton
         android:id="@+id/btnGrabarSms"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/ingresoBody"
+        android:background="#FB9836"
         android:textSize="21sp"
         android:layout_marginTop="10dp"
-        android:text="@string/botonEscritura" />
+        android:src="@drawable/btn_grabarsms" />
     
 </RelativeLayout>
 

@@ -3,31 +3,41 @@
     android:id="@+id/container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:screenOrientation="portrait"
-    android:background="#000000"
+    android:background="#FB9836"
     tools:context="com.fortmin.nfc.GrabarUrl"
     >
+    <FrameLayout 
+        android:id="@+id/titulo4"
+        android:layout_width="match_parent"
+        android:layout_height="120dp" 
+        android:background="@drawable/shopping">
+    </FrameLayout>
 
     <EditText
         android:id="@+id/ingresoUrl"
         android:inputType="textUri"
         android:layout_width="fill_parent"
+        android:background="#FB9836"
+        android:layout_below="@+id/titulo4"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_marginTop="10dp"
+        android:textColor="#FFFF00"
         android:textSize="21sp"
-        android:textColor="#FFFFFF">
+       >
         <requestFocus />
     </EditText>
 
-    <Button
+    <ImageButton
         android:id="@+id/btnGrabarUrl"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/ingresoUrl"
+        android:background="#FB9836"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="14dp"
-        android:text="@string/botonEscritura" />
+        android:src="@drawable/btn_grabarurl"
+        />
     
 </RelativeLayout>
 

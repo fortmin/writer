@@ -1,32 +1,24 @@
 package com.fortmin.nfc;
 
-import java.net.URISyntaxException;
-
-import com.fortmin.proshopapi.ProShopMgr;
-
 import android.app.Activity;
-import android.app.ActionBar;
-import android.app.Fragment;
 import android.content.Context;
 import android.content.Intent;
-import android.graphics.Typeface;
 import android.nfc.NdefMessage;
 import android.nfc.Tag;
 import android.os.Bundle;
-import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.Toast;
-import android.os.Build;
+
+import com.fortmin.proshopapi.ProShopMgr;
 
 public class GrabarTelefono extends Activity {
 	// DECLARACION DE VARIABLES
 	private String telefono;
-	private Button btn_grabar_telefono;
+	private ImageButton btn_grabar_telefono;
 	private EditText ingreso_telefono;
 	ProShopMgr proshopmgr;
 	private Context context;
@@ -36,16 +28,8 @@ public class GrabarTelefono extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_grabar_telefono);
-		btn_grabar_telefono = (Button) findViewById(R.id.btnGrabarTelefono);
+		btn_grabar_telefono = (ImageButton) findViewById(R.id.btnGrabarTelefono);
 		ingreso_telefono = (EditText) findViewById(R.id.ingresoTelefono);
-
-		// cambio la fuente del botón
-		Typeface fuente = Typeface.createFromAsset(getAssets(),
-				"gloriahallelujah.ttf");
-		// agrego la fuente al botón
-		btn_grabar_telefono.setTypeface(fuente);
-		// Le pongo degrade plateado al botón
-		btn_grabar_telefono.setBackgroundResource(R.drawable.degradado);
 
 		btn_grabar_telefono.setOnClickListener(new View.OnClickListener()
 

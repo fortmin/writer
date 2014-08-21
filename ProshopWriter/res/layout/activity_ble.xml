@@ -1,37 +1,46 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/container"
+    android:id="@+id/container3"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:screenOrientation="portrait"
-    android:background="#000000"
+    android:background="#FB9836"
     tools:context="com.fortmin.nfc.Ble"
     tools:ignore="MergeRootFrame" >
-
+     <FrameLayout 
+        android:id="@+id/titulo3"
+        android:layout_width="match_parent"
+        android:layout_height="120dp" 
+        android:background="@drawable/shopping">
+     </FrameLayout>
     <TextView
-        android:id="@+id/textView1"
+        android:id="@+id/mensaje"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/titulo3"
         android:layout_marginTop="18dp"
         android:text="@string/mensajeCalibracion"
+        android:textColor="#FFFF00"
         android:textAppearance="?android:attr/textAppearanceLarge" />
-     <Button
+     <ImageButton
         android:id="@+id/calibrarIbeacon"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/textView1"
+        android:layout_below="@+id/mensaje"
+        android:background="#FB9836"
         android:layout_marginTop="10dp"
-        android:textSize="28sp"
-        android:text="@string/calibrarIbeacon" />
+        android:src="@drawable/btn_calibraribeacon"
+        />
      
-      <Button
+      <ImageButton
         android:id="@+id/testingIbeacon"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-         android:layout_below="@+id/calibrarIbeacon"
+        android:background="#FB9836"
+        android:layout_below="@+id/calibrarIbeacon"
         android:layout_marginTop="10dp"
-        android:textSize="28sp"
-        android:text="@string/testIbeacon" />
+        android:src="@drawable/btn_testeardistancia"
+         />
      
     
  </RelativeLayout>

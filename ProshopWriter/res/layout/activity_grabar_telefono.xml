@@ -4,29 +4,39 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:screenOrientation="portrait"
-    android:background="#000000"
+    android:background="#FB9836"
     tools:context="com.fortmin.nfc.GrabarTelefono"
     tools:ignore="MergeRootFrame" >
+     <FrameLayout 
+        android:id="@+id/titulo5"
+        android:layout_width="match_parent"
+        android:layout_height="120dp" 
+        android:background="@drawable/shopping">
+     </FrameLayout>
      <EditText
         android:id="@+id/ingresoTelefono"
         android:inputType="phone"
+        android:hint="@string/edit_text_telefono"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/titulo5"
         android:layout_alignParentLeft="true"
+        android:background="#FB9836"
         android:layout_marginTop="10dp"
         android:textSize="21sp"
-        android:textColor="#FFFFFF">
+        android:textColor="#FFFF00">
         <requestFocus />
     </EditText>
 
-    <Button
+    <ImageButton
         android:id="@+id/btnGrabarTelefono"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/ingresoTelefono"
+        android:background="#FB9836"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="14dp"
-        android:text="@string/botonEscritura" />
+        android:src="@drawable/btn_grabartelefono" />
     
 </RelativeLayout>
 

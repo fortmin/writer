@@ -4,53 +4,64 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:screenOrientation="portrait"
-    android:background="#000000"
+    android:background="#FB9836"
     tools:context="com.fortmin.nfc.GrabarEmail"
     tools:ignore="MergeRootFrame" >
+    <FrameLayout 
+        android:id="@+id/titulo8"
+        android:layout_width="match_parent"
+        android:layout_height="120dp" 
+        android:background="@drawable/shopping">
+     </FrameLayout>
      <EditText
         android:id="@+id/ingresoEmail"
-        android:hint="Ingrese la direccion de correo"
+        android:hint="@string/edit_text_grabar_email"
+        android:background="#FB9836"
         android:inputType="textEmailAddress"
+        android:layout_below="@+id/titulo8"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:textSize="21sp"
-        android:textColor="#FFFFFF">
+        android:textColor="#FFFF00">
         <requestFocus />
     </EditText>
      <EditText
         android:id="@+id/ingresoSubject"
         android:inputType="textEmailSubject"
-        android:hint="Ingrese el subject"
+        android:background="#FB9836"
+        android:hint="@string/edit_text_grabar_subject"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/ingresoEmail"
         android:layout_marginTop="10dp"
         android:textSize="21sp"
-        android:textColor="#FFFFFF">
+        android:textColor="#FFFF00">
        
     </EditText>
      <EditText
         android:id="@+id/ingresoMensaje"
+        android:background="#FB9836"
         android:inputType="textLongMessage"
-        android:hint="Escriba el Mensaje"
+        android:hint="@string/edit_text_grabar_contenido"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/ingresoSubject"
         android:layout_marginTop="10dp"
         android:textSize="21sp"
-        android:textColor="#FFFFFF">
+        android:textColor="#FFFF00">
        
     </EditText>
 
-    <Button
+    <ImageButton
         android:id="@+id/btnGrabarEmail"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
+        android:background="#FB9836"
         android:layout_below="@+id/ingresoMensaje"
         android:textSize="21sp"
         android:layout_marginTop="10dp"
-        android:text="@string/botonEscritura" />
+        android:src="@drawable/btn_grabaremail" />
     
 </RelativeLayout>
 
