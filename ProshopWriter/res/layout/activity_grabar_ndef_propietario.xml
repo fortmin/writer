@@ -1,0 +1,39 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:screenOrientation="portrait"
+    android:background="#FB9836"
+    tools:context="com.fortmin.nfc.GrabarNdefPropietario"
+    tools:ignore="MergeRootFrame" >
+    <FrameLayout 
+        android:id="@+id/titulo7"
+        android:layout_width="match_parent"
+        android:layout_height="120dp" 
+        android:background="@drawable/shopping">
+     </FrameLayout>
+    <EditText
+        android:id="@+id/ingresoIdPropietario"
+        android:hint="@string/edit_text_texto_propietario"
+        android:background="#FB9836"
+        android:layout_below="@+id/titulo7"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:textSize="21sp"
+        android:textColor="#FFFF00">
+        <requestFocus />
+    </EditText>
+     <ImageButton
+        android:id="@+id/btnGrabarIdPropietario"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ingresoIdPropietario"
+        android:background="#FB9836"
+        android:textSize="21sp"
+        android:layout_marginTop="10dp"
+        android:src="@drawable/btn_grabartexto" />
+    
+</RelativeLayout>
+
