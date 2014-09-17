@@ -3,6 +3,7 @@
 
     <string name="app_name">ProshopWriter</string>
     <string name="hello_world">Hello world!</string>
+     <string name="desc">boton</string>
     <string name="action_settings">Settings</string>
     <string name="botonEscritura">GrabarTag</string>
     <string name="url">Escriba la Url a grabar </string>
@@ -24,9 +25,10 @@
     <string name="title_activity_grabar_email">GrabarEmail</string>
     <string name="title_activity_grabar_telefono">GrabarTelefono</string>
     <string name="title_activity_grabar_sms">GrabarSms</string>
+    <string name="edit_text_pasar_puntos">Digite los puntos a transferir</string>
     <string name="botonIbeacon">Ibeacon</string>
     <string name="title_activity_ble">Ble</string>
-    <string name="mensajeCalibracion">Para calibrar separese del Ibeacon, hasta el lugar desde donde quiere ser detectado, luego puelse calibrar</string>
+    <string name="mensajeCalibracion">Para calibrar separese del Ibeacon, hasta el lugar desde donde quiere ser detectado y pulse calibrar</string>
     <string name="calibrarIbeacon">Calibrar</string>
     <string name="testIbeacon">TestearBeacon</string>
     <string name="title_activity_grabar_ndef_propietario">GrabarNdefPropietario</string>

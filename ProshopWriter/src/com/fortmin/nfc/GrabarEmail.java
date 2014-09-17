@@ -82,17 +82,17 @@ public class GrabarEmail extends Activity {
 	@Override
 	public void onResume() {
 		super.onResume();
-		proshopmgr.escucharTagNdefGrabar(this, context, getClass());
+		proshopmgr.getNFC().escucharTagNdefEscribir(this, getClass());
 	}
 
 	@Override
 	public void onNewIntent(Intent intent) {
 		super.onNewIntent(intent);
-		tag = proshopmgr.obtenerTagDescubierto(intent);
+		tag = proshopmgr.getNFC().obtenerTagDescubierto(intent);
 		if (tag != null) {
-			NdefMessage newMessage = proshopmgr.prepararMensNdefMailto(email,
-					subject, mensaje);
-			proshopmgr.escribirNdefMessageToTag(newMessage, tag);
+			NdefMessage newMessage = proshopmgr.getNFC()
+					.prepararMensNdefMailto(email, subject, mensaje);
+			proshopmgr.getNFC().escribirNdefMessageToTag(newMessage, tag);
 
 		}
 
@@ -101,7 +101,7 @@ public class GrabarEmail extends Activity {
 	@Override
 	public void onPause() {
 		super.onPause();
-		proshopmgr.noEscucharTagNdefGrabar(this, context);
+		proshopmgr.getNFC().noEscucharTagNdefGrabar(this);
 	}
 
 }

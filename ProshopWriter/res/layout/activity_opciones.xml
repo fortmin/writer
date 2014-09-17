@@ -3,66 +3,81 @@
     android:id="@+id/container2"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FB9836"
+    android:background="#000000"
     tools:context="com.fortmin.nfc.Opciones"
     tools:ignore="MergeRootFrame" >
-    <FrameLayout 
-        android:id="@+id/titulo2"
-        android:layout_width="match_parent"
-        android:layout_height="120dp" 
-        android:background="@drawable/shopping">
-     </FrameLayout>
-    <ImageButton
-        android:id="@+id/grabarEmail"
-        android:layout_width="fill_parent"
+    
+      <TableLayout
+   		 android:id="@+id/table1"
+   		 android:layout_width="wrap_content"
+  		 android:layout_height="wrap_content" 
+  		 android:background="#000000"
+  		 android:padding="5dip"
+  		 android:layout_centerHorizontal="true">
+     <TableRow
+        android:id="@+id/tableRow1"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/titulo2"
-        android:layout_marginTop="10dp"
-        android:clickable="true"
-        android:background="#FB9836"
+        android:padding="5dip" >	
+       <ImageButton
+         android:contentDescription="@string/desc"  
+         android:id="@+id/grabarEmail"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:padding="5dip"
+         android:background="#000000"
+         android:clickable="true"
          android:src="@drawable/btn_grabaremail"
-       />
+        />
 
-    <ImageButton
+      <ImageButton
+        android:contentDescription="@string/desc"
         android:id="@+id/grabarUrl"
-        android:layout_width="fill_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/grabarEmail"
-        android:background="#FB9836"
-        android:layout_marginTop="10dp"
+        android:background="#000000"
+        android:padding="5dip"
         android:clickable="true"
          android:src="@drawable/btn_grabarurl" />
-
-    <ImageButton
-        android:id="@+id/grabarTelefono"
-        android:layout_width="fill_parent"
+    </TableRow>
+     <TableRow
+        android:id="@+id/tableRow2"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/grabarUrl"
-        android:layout_marginTop="10dp"
+        android:padding="5dip" >
+
+      <ImageButton
+        android:contentDescription="@string/desc"
+        android:id="@+id/grabarTelefono"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#000000"
+        android:padding="5dip"
         android:clickable="true"
-        android:background="#FB9836"
         android:src="@drawable/btn_grabartelefono"
       
          />
 
     <ImageButton
+        android:contentDescription="@string/desc"
         android:id="@+id/grabarSms"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/grabarTelefono"
-        android:background="#FB9836"
+        android:background="#000000"
+        android:padding="5dip"
         android:clickable="true"
-        android:layout_marginTop="10dp"
         android:src="@drawable/btn_grabarsms" />
+    </TableRow>
      <ImageButton
+        android:contentDescription="@string/desc"
         android:id="@+id/grabarIdPropietario"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/grabarSms"
+        android:padding="15dip"
         android:clickable="true"
-        android:background="#FB9836" 
-        android:layout_marginTop="10dp"
+        android:background="#000000"
         android:src="@drawable/btn_grabartexto"/>
+     </TableLayout>
     
 </RelativeLayout>
 

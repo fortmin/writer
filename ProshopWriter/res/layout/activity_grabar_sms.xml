@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:screenOrientation="portrait"
-    android:background="#FB9836"
+    android:background="#000000"
     tools:context="com.fortmin.nfc.GrabarSms"
     tools:ignore="MergeRootFrame" >
      <FrameLayout 
@@ -20,10 +20,10 @@
         android:layout_below="@+id/titulo6"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:background="#FB9836"
+        android:background="#000000"
         android:layout_marginTop="10dp"
         android:textSize="21sp"
-        android:textColor="#FFFF00">
+        android:textColor="#FFFFFF">
         <requestFocus />
     </EditText>
      <EditText
@@ -32,19 +32,20 @@
         android:hint="@string/edit_text_grabar_cuerpo_sms"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:background="#FB9836"
+        android:background="#000000"
         android:layout_below="@+id/ingresoSMS"
         android:layout_marginTop="10dp"
         android:textSize="21sp"
-        android:textColor="#FFFF00">
+        android:textColor="#FFFFFF">
        
     </EditText>
     <ImageButton
+         android:contentDescription="@string/desc" 
         android:id="@+id/btnGrabarSms"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/ingresoBody"
-        android:background="#FB9836"
+        android:background="#000000"
         android:textSize="21sp"
         android:layout_marginTop="10dp"
         android:src="@drawable/btn_grabarsms" />

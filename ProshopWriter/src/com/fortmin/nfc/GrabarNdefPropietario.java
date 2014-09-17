@@ -71,17 +71,18 @@ public class GrabarNdefPropietario extends Activity {
 	@Override
 	public void onResume() {
 		super.onResume();
-		proshopmgr.escucharTagNdefGrabar(this, context, getClass());
+		proshopmgr.getNFC().escucharTagNdefEscribir(this, getClass());
 	}
 
 	@Override
 	public void onNewIntent(Intent intent) {
 		super.onNewIntent(intent);
-		tag = proshopmgr.obtenerTagDescubierto(intent);
+		tag = proshopmgr.getNFC().obtenerTagDescubierto(intent);
 		if (tag != null) {
-			NdefMessage newMessage = proshopmgr.prepararMensNdefPropietario(id);
+			NdefMessage newMessage = proshopmgr.getNFC()
+					.prepararMensNdefPropietario(id);
 
-			proshopmgr.escribirNdefMessageToTag(newMessage, tag);
+			proshopmgr.getNFC().escribirNdefMessageToTag(newMessage, tag);
 
 		}
 
@@ -90,7 +91,7 @@ public class GrabarNdefPropietario extends Activity {
 	@Override
 	public void onPause() {
 		super.onPause();
-		proshopmgr.noEscucharTagNdefGrabar(this, context);
+		proshopmgr.getNFC().noEscucharTagNdefGrabar(this);
 	}
 
 }

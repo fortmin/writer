@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:screenOrientation="portrait"
-    android:background="#FB9836"
+    android:background="#000000"
     tools:context="com.fortmin.nfc.GrabarEmail"
     tools:ignore="MergeRootFrame" >
     <FrameLayout 
@@ -16,32 +16,32 @@
      <EditText
         android:id="@+id/ingresoEmail"
         android:hint="@string/edit_text_grabar_email"
-        android:background="#FB9836"
+        android:background="#000000"
         android:inputType="textEmailAddress"
         android:layout_below="@+id/titulo8"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:textSize="21sp"
-        android:textColor="#FFFF00">
+        android:textColor="#FFFFFF">
         <requestFocus />
     </EditText>
      <EditText
         android:id="@+id/ingresoSubject"
         android:inputType="textEmailSubject"
-        android:background="#FB9836"
+        android:background="#000000"
         android:hint="@string/edit_text_grabar_subject"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/ingresoEmail"
         android:layout_marginTop="10dp"
         android:textSize="21sp"
-        android:textColor="#FFFF00">
+        android:textColor="#FFFFFF">
        
     </EditText>
      <EditText
         android:id="@+id/ingresoMensaje"
-        android:background="#FB9836"
+        android:background="#000000"
         android:inputType="textLongMessage"
         android:hint="@string/edit_text_grabar_contenido"
         android:layout_width="fill_parent"
@@ -49,15 +49,16 @@
         android:layout_below="@+id/ingresoSubject"
         android:layout_marginTop="10dp"
         android:textSize="21sp"
-        android:textColor="#FFFF00">
+        android:textColor="#FFFFFF">
        
     </EditText>
 
     <ImageButton
+        android:contentDescription="@string/desc" 
         android:id="@+id/btnGrabarEmail"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:background="#FB9836"
+        android:background="#000000"
         android:layout_below="@+id/ingresoMensaje"
         android:textSize="21sp"
         android:layout_marginTop="10dp"

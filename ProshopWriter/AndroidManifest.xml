@@ -20,6 +20,7 @@
         android:theme="@style/AppTheme" >
         <activity
             android:name="com.fortmin.nfc.Inicio"
+            android:screenOrientation="portrait"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -29,6 +30,7 @@
         </activity>
         <activity
             android:name="com.fortmin.nfc.Opciones"
+            android:screenOrientation="portrait"
             android:label="@string/title_activity_opciones" >
              <intent-filter>
                 <category android:name="android.intent.category.LAUNCHER" />
@@ -36,6 +38,7 @@
         </activity>
         <activity
             android:name="com.fortmin.nfc.GrabarUrl"
+            android:screenOrientation="portrait"
             android:label="@string/title_activity_grabar_url" >
             <intent-filter>
                 <action android:name="android.nfc.action.TAG_DISCOVERED" />
@@ -45,6 +48,7 @@
         </activity>
         <activity
             android:name="com.fortmin.nfc.GrabarEmail"
+            android:screenOrientation="portrait"
             android:label="@string/title_activity_grabar_email" >
             <intent-filter>
                 <action android:name="android.nfc.action.TAG_DISCOVERED" />
@@ -54,6 +58,7 @@
         </activity>
         <activity
             android:name="com.fortmin.nfc.GrabarTelefono"
+            android:screenOrientation="portrait"
             android:label="@string/title_activity_grabar_telefono" >
             <intent-filter>
                 <action android:name="android.nfc.action.TAG_DISCOVERED" />
@@ -63,6 +68,7 @@
         </activity>
         <activity
             android:name="com.fortmin.nfc.GrabarSms"
+            android:screenOrientation="portrait"
             android:label="@string/title_activity_grabar_sms" >
         </activity>
         <activity
@@ -71,6 +77,7 @@
         </activity>
         <activity
             android:name="com.fortmin.nfc.GrabarNdefPropietario"
+            android:screenOrientation="portrait"
             android:label="@string/title_activity_grabar_ndef_propietario" >
         </activity>
     </application>

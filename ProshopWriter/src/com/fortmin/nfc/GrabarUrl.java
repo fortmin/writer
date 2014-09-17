@@ -83,18 +83,18 @@ public class GrabarUrl extends Activity {
 	@Override
 	public void onResume() {
 		super.onResume();
-		proshopmgr.escucharTagNdefGrabar(this, context, getClass());
+		proshopmgr.getNFC().escucharTagNdefEscribir(this, getClass());
 	}
 
 	@Override
 	public void onNewIntent(Intent intent) {
 		super.onNewIntent(intent);
-		tag = proshopmgr.obtenerTagDescubierto(intent);
+		tag = proshopmgr.getNFC().obtenerTagDescubierto(intent);
 		if (tag != null) {
 			try {
-				NdefMessage newMessage = proshopmgr
+				NdefMessage newMessage = proshopmgr.getNFC()
 						.prepararMensNdefUrl(textoUrl);
-				proshopmgr.escribirNdefMessageToTag(newMessage, tag);
+				proshopmgr.getNFC().escribirNdefMessageToTag(newMessage, tag);
 			} catch (URISyntaxException e) {
 				Mensaje(this, "URL con formato incorrecto");
 			}
@@ -105,7 +105,7 @@ public class GrabarUrl extends Activity {
 	@Override
 	public void onPause() {
 		super.onPause();
-		proshopmgr.noEscucharTagNdefGrabar(this, context);
+		proshopmgr.getNFC().noEscucharTagNdefGrabar(this);
 	}
 
 }

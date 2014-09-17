@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:screenOrientation="portrait"
-    android:background="#FB9836"
+    android:background="#000000"
     tools:context="com.fortmin.nfc.Ble"
     tools:ignore="MergeRootFrame" >
      <FrameLayout 
@@ -18,25 +18,28 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/titulo3"
+        android:background="#000000"
         android:layout_marginTop="18dp"
         android:text="@string/mensajeCalibracion"
-        android:textColor="#FFFF00"
+        android:textColor="#FFFFFF"
         android:textAppearance="?android:attr/textAppearanceLarge" />
      <ImageButton
+        android:contentDescription="@string/desc"
         android:id="@+id/calibrarIbeacon"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/mensaje"
-        android:background="#FB9836"
+        android:background="#000000"
         android:layout_marginTop="10dp"
         android:src="@drawable/btn_calibraribeacon"
         />
      
       <ImageButton
+        android:contentDescription="@string/desc"
         android:id="@+id/testingIbeacon"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:background="#FB9836"
+        android:background="#000000"
         android:layout_below="@+id/calibrarIbeacon"
         android:layout_marginTop="10dp"
         android:src="@drawable/btn_testeardistancia"

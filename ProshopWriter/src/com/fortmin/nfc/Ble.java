@@ -1,7 +1,6 @@
 package com.fortmin.nfc;
 
 import java.util.Locale;
-import java.util.Timer;
 
 import android.app.Activity;
 import android.bluetooth.BluetoothAdapter;
@@ -16,11 +15,11 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.fortmin.proshopapi.ProShopMgr;
 import com.fortmin.proshopapi.ble.Ibeacon;
 
 public class Ble extends Activity implements OnInitListener {
 	private com.fortmin.proshopapi.ble.EscucharIbeacons beacons;
-	private Timer mTimer;
 	boolean scanning = false;
 	private TextView mensaje;
 	private Ibeacon ibeacon;
@@ -65,16 +64,18 @@ public class Ble extends Activity implements OnInitListener {
 				ibeacon.setRssi(beacons.getRssi());
 				if (ibeacon.clienteCerca()) {
 					speakWords("CERCA");
-					// mostrarMensaje("CERCA");
+					// mostrarMensaje(String.valueOf(ibeacon.getTxPower()));
 				} else {
 					speakWords("LEJOS");
-					// mostrarMensaje("LEJOS");
+					// mostrarMensaje(String.valueOf(ibeacon.getTxPower()));
 				}
 				beacons.startScanning();
 			}
 		});
 		// checheo el hardware de BLE
-		if (beacons.checkBleHardwareAvailable() == false) {
+		ProShopMgr mgr = new ProShopMgr(getApplicationContext());
+
+		if (mgr.getBLE(this).bleSoportado(this) == false) {
 			Toast.makeText(this, "BLE Problemas de incompatibilidad",
 					Toast.LENGTH_SHORT).show();
 			finish();
@@ -94,19 +95,25 @@ public class Ble extends Activity implements OnInitListener {
 	protected void onResume() {
 		super.onResume();
 		boolean inicializo = true;
-		if (beacons.checkBleHardwareAvailable() == false) {
+		ProShopMgr mgr = new ProShopMgr(getApplicationContext());
+		if (mgr.getBLE(this).bleSoportado(this) == false) {
 			mostrarMensaje("Su dispositivo no es compatible para recibir Ibeacon");
 			inicializo = false;
 		}
 		// check for Bluetooth enabled on each resume
 
-		else if (beacons.isBtEnabled() == false) {
+		else if (mgr.bluetoothHabilitado(this) == false) {
 			// BT not enabled. Request to turn it on. User needs to restart app
 			// once it's turned on.
-			Intent enableBtIntent = new Intent(
-					BluetoothAdapter.ACTION_REQUEST_ENABLE);
-			startActivity(enableBtIntent);
+			/*
+			 * Intent enableBtIntent = new Intent(
+			 * BluetoothAdapter.ACTION_REQUEST_ENABLE);
+			 * startActivity(enableBtIntent);
+			 */
 			// finish();
+			BluetoothAdapter mBluetoothAdapter = BluetoothAdapter
+					.getDefaultAdapter();
+			mBluetoothAdapter.enable();
 		}
 
 		// inicializacion del ble
