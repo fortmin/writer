@@ -1,6 +1,8 @@
 package com.fortmin.nfc;
 
 import java.util.Locale;
+import java.util.Timer;
+import java.util.TimerTask;
 
 import android.app.Activity;
 import android.bluetooth.BluetoothAdapter;
@@ -22,13 +24,17 @@ public class Ble extends Activity implements OnInitListener {
 	private com.fortmin.proshopapi.ble.EscucharIbeacons beacons;
 	boolean scanning = false;
 	private TextView mensaje;
+	private boolean calibrado;
+	private int rssi_calibrado;
+	private boolean seteo_ibeacon;
 	private Ibeacon ibeacon;
 	private int MY_DATA_CHECK_CODE = 0;
 	private TextToSpeech myTTS;
+	private Timer mTimer;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
-
+		seteo_ibeacon = false;
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_ble);
 		ImageButton calibrarIbeacon = (ImageButton) findViewById(R.id.calibrarIbeacon);
@@ -38,18 +44,35 @@ public class Ble extends Activity implements OnInitListener {
 		Intent checkTTSIntent = new Intent();
 		checkTTSIntent.setAction(TextToSpeech.Engine.ACTION_CHECK_TTS_DATA);
 		startActivityForResult(checkTTSIntent, MY_DATA_CHECK_CODE);
+		calibrado = false;
+		this.mTimer = new Timer();
+		this.mTimer.scheduleAtFixedRate(new TimerTask() {
+			@Override
+			public void run() {
+				if (scanning && seteo_ibeacon == false) {
+					seteo_ibeacon = true;
+					ibeacon = beacons.darIbeacon();
+				}
+				if (scanning) {
+					ibeacon.setValorRssi(beacons.getRssi());
 
+				}
+
+			}
+
+		}, 0, 1000 * 1);
 		calibrarIbeacon.setOnClickListener(new View.OnClickListener()
 
 		{
 
 			public void onClick(View view) {
-				if (scanning)
-					ibeacon = beacons.darIbeacon();
-				ibeacon.setCalibracion(beacons.getRssi());
 
+				ibeacon.setCalibracion(beacons.getRssi());
+				rssi_calibrado = ibeacon.getRssi();
+				calibrado = true;
+				// ibeacon.setCalibracion(90);
 				mostrarMensaje("CALIBRADO OK");
-				mensaje.setText("Para ver si esta mas cerca o lejos del lugar donde calibro presione testear");
+				mensaje.setText("Valor de Calibracion= " + rssi_calibrado);
 
 			}
 		});
@@ -59,18 +82,25 @@ public class Ble extends Activity implements OnInitListener {
 		{
 
 			public void onClick(View view) {
+				if (calibrado) {
 
-				beacons.stopScanning();
-				ibeacon.setRssi(beacons.getRssi());
-				if (ibeacon.clienteCerca()) {
-					speakWords("CERCA");
-					// mostrarMensaje(String.valueOf(ibeacon.getTxPower()));
+					mostrarMensaje(String.valueOf(ibeacon.getRssi()));
+					if (ibeacon.clienteCerca()) {
+						speakWords("CERCA");
+						// mostrarMensaje("Cerca");
+					} else {
+						speakWords("LEJOS");
+						// mostrarMensaje("Lejos");
+						// mostrarMensaje(String.valueOf(ibeacon.getTxPower()));
+					}
+
 				} else {
-					speakWords("LEJOS");
-					// mostrarMensaje(String.valueOf(ibeacon.getTxPower()));
+					// speakWords("calibrar primero");
+					mostrarMensaje("Debe calibrar primero");
 				}
-				beacons.startScanning();
+
 			}
+
 		});
 		// checheo el hardware de BLE
 		ProShopMgr mgr = new ProShopMgr(getApplicationContext());
